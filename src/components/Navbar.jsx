@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const navlinks = [
     { title: "Home", path: "/" },
-    { title: "Scans", path: "/profile" },
+    { title: "Scans", path: "/scan" },
     { title: "About", path: "/about" },
     { title: "Contact", path: "/contact" },
   ];
@@ -16,7 +16,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-white bg-opacity-100">
+    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 bg-white bg-opacity-100">
       <div className="flex flex-wrap items-center justify-around mx-auto p-8">
         <Link className="md:text-4xl font-semibold text-black" to="/">
           StHealthy
@@ -44,7 +44,7 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navlinks.map((link, index) => (
               <li key={index}>
-                <Navlink href={link.path} title={link.title} />
+                <Navlink path={link.path} title={link.title} />
               </li>
             ))}
           </ul>
